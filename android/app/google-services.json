@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "801700532522",
+    "project_id": "itdev-praktikum-1005",
+    "storage_bucket": "itdev-praktikum-1005.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801700532522:android:d86fe6ca41c19436b74e53",
+        "android_client_info": {
+          "package_name": "com.example.itdev_materi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSd3FpSf2pfS70J3MleSP48NF5U2Ehcvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
