@@ -42,12 +42,12 @@ class BookProvider extends ChangeNotifier{
     }
   }
 
-  Future<void> deleteBook(int docId) async{
-    try{
-      await _firestore.collection('books').doc(docId.toString()).delete();
+  Future<void> deleteBook(String docId) async {
+    try {
+      await _firestore.collection('books').doc(docId).delete();
       _books.removeWhere((b) => b.docId == docId);
       notifyListeners();
-    }catch(e){
+    } catch (e) {
       print('Error menghapus data buku: $e');
     }
   }

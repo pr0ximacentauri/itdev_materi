@@ -18,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // Pastikan tidak error karena context belum tersedia secara penuh
     Future.microtask(() =>
       Provider.of<BookProvider>(context, listen: false).getBooks()
     );

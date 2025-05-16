@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:itdev_materi/models/book_model.dart';
 import 'package:itdev_materi/providers/book_provider.dart';
+import 'package:itdev_materi/screens/home/home_screen.dart';
 import 'package:itdev_materi/screens/main_scaffold.dart';
 import 'package:provider/provider.dart';
 
@@ -64,7 +65,10 @@ class BookAddScreen extends StatelessWidget {
                     image: imageTxt.text,
                   );
                   Provider.of<BookProvider>(context, listen: false).addBook(book);
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => HomeScreen()),
+                  );
                 },
                 child: const Text('Tambah Buku'),
               ),

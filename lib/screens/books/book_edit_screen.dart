@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:itdev_materi/models/book_model.dart';
 import 'package:itdev_materi/providers/book_provider.dart';
+import 'package:itdev_materi/screens/books/book_detail_screen.dart';
 import 'package:provider/provider.dart';
 
 class BookEditScreen extends StatefulWidget {
@@ -79,7 +80,8 @@ class _BookEditScreenState extends State<BookEditScreen>  {
             ElevatedButton(
               onPressed: () {
                 final updatedBook = BookModel(
-                  id: DateTime.now().millisecondsSinceEpoch,
+                  docId: widget.book.docId,
+                  id: widget.book.id,   
                   title: titleTxt.text,
                   description: descriptionTxt.text,
                   author: authorTxt.text,
@@ -88,7 +90,10 @@ class _BookEditScreenState extends State<BookEditScreen>  {
                   image: imageTxt.text,
                 );
                 Provider.of<BookProvider>(context, listen: false).updateBook(updatedBook);
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => BookDetailScreen(book: updatedBook)),
+                );
               },
               child: const Text('Perbarui Buku'),
             )

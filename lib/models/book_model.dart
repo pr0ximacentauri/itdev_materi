@@ -36,7 +36,7 @@ class BookModel {
   factory BookModel.fromDoc(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
     return BookModel(
-      docId: doc.id, // ambil ID dokumen
+      docId: doc.id, 
       id: data['id'] ?? 0,
       title: data['title'] ?? '',
       description: data['description'] ?? '',
